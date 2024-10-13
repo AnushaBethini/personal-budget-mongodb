@@ -23,7 +23,7 @@ app.get("/budget", (req, res) => {
         .find({}) // Retrieve data from the "budgets" collection
         .then((data) => {
           res.json(data);
-          console.log(data);
+          
           mongoose.connection.close();
         })
         .catch((connectionError) => {
@@ -47,7 +47,7 @@ app.post("/addbudget", (req, res) => {
         .create(newItem) // Insert the new item into the "budgets" collection
         .then((data) => {
           res.json(data); // Send back the created data as a response
-          console.log(data);
+          
           mongoose.connection.close();
         })
         .catch((connectionError) => {
